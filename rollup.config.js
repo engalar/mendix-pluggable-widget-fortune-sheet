@@ -17,6 +17,8 @@ export default args => {
   const result = args.configDefaultConfig;
   const [jsConfig, mJsConfig] = result;
   [jsConfig, mJsConfig].forEach(config => {
+    //fix global is not defined
+    config.output.intro='var global = typeof self !== undefined ? self : this;';
     //https://zh-hans.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup
     const newBabelPlugin = getBabelInputPlugin({
       sourceMaps: !production,
