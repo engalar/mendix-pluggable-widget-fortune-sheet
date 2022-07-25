@@ -6,6 +6,7 @@
   "packagePath": "mendixcn",
   "author": "wengao.liu@siemens.com",
   "dependencies": {
+    "@fortune-sheet/react": "^0.5.8",
     "ahooks": "^3.3.10",
     "classnames": "^2.2.6"
   },

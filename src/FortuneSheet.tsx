@@ -1,11 +1,17 @@
 import { FortuneSheetContainerProps } from "../typings/FortuneSheetProps";
 
+import { Workbook } from "@fortune-sheet/react";
+import "./ui/index.scss";
+
+import formula from "./formula";
+
+
 export default function (props: FortuneSheetContainerProps) {
     console.log(props);
 
     return (
-        <div>
-            hello {props.sampleText} and your value is
+        <div className="mendixcn-fortune-sheet">
+            <Workbook data={[formula]} />
         </div>
     );
 }
