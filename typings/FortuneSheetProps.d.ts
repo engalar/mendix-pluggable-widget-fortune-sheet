@@ -4,7 +4,6 @@
  * @author Mendix UI Content Team
  */
 import { CSSProperties } from "react";
-import { EditableValue, ListValue, ListAttributeValue } from "mendix";
 
 export interface FortuneSheetContainerProps {
     name: string;
@@ -12,9 +11,6 @@ export interface FortuneSheetContainerProps {
     style?: CSSProperties;
     tabIndex?: number;
     sampleText: string;
-    attribute?: EditableValue<string>;
-    datasource: ListValue;
-    att2?: ListAttributeValue<string>;
 }
 
 export interface FortuneSheetPreviewProps {
@@ -23,7 +19,4 @@ export interface FortuneSheetPreviewProps {
     styleObject?: CSSProperties;
     readOnly: boolean;
     sampleText: string;
-    attribute: string;
-    datasource: {} | { type: string } | null;
-    att2: string;
 }
