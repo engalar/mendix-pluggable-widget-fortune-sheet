@@ -4,13 +4,14 @@ import { Workbook } from "@fortune-sheet/react";
 import "./ui/index.scss";
 
 import formula from "./formula";
+import classNames from "classnames";
 
 
 export default function (props: FortuneSheetContainerProps) {
     console.log(props);
 
     return (
-        <div className="mendixcn-fortune-sheet">
+        <div style={props.style} className={classNames('mendixcn-fortune-sheet', props.class)}>
             <Workbook data={[formula]} />
         </div>
     );
