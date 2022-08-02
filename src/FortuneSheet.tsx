@@ -6,7 +6,8 @@ import { Workbook, WorkbookInstance } from "@fortune-sheet/react";
 import "./ui/index.scss";
 
 import classNames from "classnames";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useEffect } from "react";
+import { usePrevious } from "ahooks";
 
 
 function cellValue(r: number, c: number, v: string): CellWithRowAndCol {
@@ -95,12 +96,18 @@ export default function (props: FortuneSheetContainerProps) {
                     cellData.push(cv);
                 });
             });
-            ref.current?.clearCell(1, 0);
             return sheetValue(cellData.concat(headValue));
         } else {
             return sheetValue(Loading.concat(headValue));
         }
     }, [props.datasource, props.columns]);
+
+    const preData = usePrevious(data);
+
+    useEffect(() => {
+        preData?.celldata?.forEach(c => ref.current?.clearCell(c.r, c.c));
+        data?.celldata?.forEach(c => ref.current?.setCellValue(c.r, c.c, c.v));
+    }, [data, preData]);
 
     return (
         <div style={props.style} className={classNames('mendixcn-fortune-sheet', props.class)}>
