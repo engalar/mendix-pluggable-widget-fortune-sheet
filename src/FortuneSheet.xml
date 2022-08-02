@@ -10,5 +10,8 @@
                 <description>Sample text input</description>
             </property>
         </propertyGroup>
+        <propertyGroup caption="Common">
+            <systemProperty key="Editability"/>
+        </propertyGroup>
     </properties>
 </widget>

@@ -12,7 +12,7 @@ export default function (props: FortuneSheetContainerProps) {
 
     return (
         <div style={props.style} className={classNames('mendixcn-fortune-sheet', props.class)}>
-            <Workbook data={[formula]} />
+            <Workbook showFormulaBar={false} allowEdit={false} showToolbar={false} data={[formula]} />
         </div>
     );
 }
