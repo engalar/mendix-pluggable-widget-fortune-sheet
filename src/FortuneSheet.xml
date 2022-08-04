@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendixcn.fortunesheet.FortuneSheet" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>FortuneSheet</name>
+    <description>My widget description</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="allowEdit" type="boolean" defaultValue="false">
+                <caption>允许编辑</caption>
+                <description></description>
+            </property>
+            <property key="datasource" type="datasource" required="true" isList="true">
+                <caption>数据源</caption>
+                <description></description>
+            </property>
+            <property key="columns" type="object" isList="true" required="false">
+                <caption>列配置</caption>
+                <description></description>
+                <properties>
+                    <propertyGroup caption="General">
+                        <property key="columnDisplayName" type="textTemplate" required="true" multiline="false">
+                            <caption>显示名称</caption>
+                            <description></description>
+                            <translations>
+                                <translation lang="en_US">请指定</translation>
+                            </translations>
+                        </property>
+                        <property key="columnValue" type="attribute" dataSource="../datasource" required="false">
+                            <caption>值</caption>
+                            <description></description>
+                            <attributeTypes>
+                                <attributeType name="String" />
+                                <attributeType name="Binary" />
+                                <attributeType name="Boolean" />
+                                <attributeType name="DateTime" />
+                                <attributeType name="Decimal" />
+                                <attributeType name="Enum" />
+                                <attributeType name="HashString" />
+                                <attributeType name="Integer" />
+                                <attributeType name="Long" />
+                                <attributeType name="AutoNumber" />
+                            </attributeTypes>
+                        </property>
+
+                    </propertyGroup>
+                </properties>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
